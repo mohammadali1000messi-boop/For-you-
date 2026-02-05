@@ -8,7 +8,6 @@
   body {
     margin:0;
     padding:0;
-    background: linear-gradient(to bottom, #87CEFA, #ffffff);
     font-family: Arial, sans-serif;
     height: 100vh;
     overflow: hidden;
@@ -16,15 +15,32 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    background: linear-gradient(to bottom, #87CEFA, #ffffff);
   }
 
-  /* متن انیمیشن */
+  /* عکس بک‌گراند روی گرادینت */
+  .bg-image {
+    position: absolute;
+    top: 0.5cm;
+    left: 0.5cm;
+    right: 0.5cm;
+    bottom: 0.5cm;
+    background: url("https://raw.githubusercontent.com/mohammadali1000messi-boop/For-you-/refs/heads/main/Picsart_26-02-05_15-03-13-830.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  /* متن انیمیشن وسط */
   .text-box {
     width: 60%;
     text-align: center;
     font-size: 1.2em;
     color: #111;
     line-height: 1.6em;
+    position: relative;
+    z-index: 1;
   }
   .text-box span {
     opacity: 0;
@@ -40,12 +56,29 @@
     to { opacity:1; }
   }
 
+  /* متن بالا (هم سایز متن وسط، صورتی و اوپاسیتی 80%) */
+  .top-text {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    color: rgba(255,182,193,0.8); /* صورتی با 80% opacity */
+    z-index: 1;
+    animation: topFade 2s forwards;
+  }
+  @keyframes topFade {
+    from { opacity: 0; transform: translateX(-50px);}
+    to { opacity: 1; transform: translateX(0);}
+  }
+
   /* قلب و ستاره‌ها */
   .emoji {
     position: absolute;
     font-size: 2rem;
     opacity: 0.5;
     animation: floatUp 8s infinite;
+    z-index: 1;
   }
   @keyframes floatUp {
     0% { transform: translateY(100vh) rotate(0deg);}
@@ -54,11 +87,11 @@
 
   /* موزیک */
   .music-box {
-    position: fixed;
-    bottom: 20px;
+    position: absolute;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 9999;
+    z-index: 1;
   }
   .music-box audio {
     width: 300px;
@@ -67,7 +100,13 @@
 </head>
 <body>
 
-<!-- متن انیمیشن -->
+<!-- عکس بک‌گراند روی گرادینت -->
+<div class="bg-image"></div>
+
+<!-- متن بالا -->
+<div class="top-text">a month has passed...</div>
+
+<!-- متن انیمیشن وسط -->
 <div class="text-box">
   <span>My dear Dina ♥️</span>
   <span>Spending a month by your side has filled my life with warmth, positive energy, understanding, and a renewed passion for living.</span>
