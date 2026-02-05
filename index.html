@@ -4,109 +4,115 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>One Month Anniversary</title>
+
 <style>
   body {
     margin:0;
     padding:0;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
     font-family: Arial, sans-serif;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
     background: linear-gradient(to bottom, #87CEFA, #ffffff);
+    position: relative;
   }
 
-  /* عکس بک‌گراند روی گرادینت */
+  /* لایه عکس روی بک‌گراند */
   .bg-image {
-    position: absolute;
-    top: 0.5cm;
-    left: 0.5cm;
-    right: 0.5cm;
-    bottom: 0.5cm;
-    background: url("https://raw.githubusercontent.com/mohammadali1000messi-boop/For-you-/refs/heads/main/Picsart_26-02-05_15-03-13-830.jpg") no-repeat center center;
+    position:absolute;
+    top:0.5cm;
+    left:0.5cm;
+    right:0.5cm;
+    bottom:0.5cm;
+    background-image: url("https://raw.githubusercontent.com/mohammadali1000messi-boop/For-you-/refs/heads/main/Picsart_26-02-05_15-03-13-830.jpg");
     background-size: cover;
-    opacity: 0.25;
+    background-position: center;
+    opacity: 0.8;
     z-index: 0;
   }
 
-  /* متن انیمیشن وسط */
-  .text-box {
-    width: 60%;
-    text-align: center;
-    font-size: 1.2em;
-    color: #111;
-    line-height: 1.6em;
-    position: relative;
-    z-index: 1;
+  /* متن بالا */
+  .top-text {
+    position:absolute;
+    top:12%;
+    width:100%;
+    text-align:center;
+    font-size:1.35em;
+    color:#ffffff;
+    opacity:0;
+    animation: topFade 2s forwards;
+    z-index:1;
   }
+
+  @keyframes topFade {
+    from { opacity:0; transform:translateX(-40px); }
+    to { opacity:1; transform:translateX(0); }
+  }
+
+  /* متن وسط */
+  .text-box {
+    width:60%;
+    text-align:center;
+    font-size:1.2em;
+    color:#ffffff;
+    line-height:1.6em;
+    position:relative;
+    z-index:1;
+  }
+
   .text-box span {
-    opacity: 0;
-    display: block;
+    opacity:0;
+    display:block;
     animation: fadeIn 2s forwards;
   }
-  .text-box span:nth-child(1){animation-delay: 0s;}
-  .text-box span:nth-child(2){animation-delay: 2s;}
-  .text-box span:nth-child(3){animation-delay: 4s;}
-  .text-box span:nth-child(4){animation-delay: 6s;}
+
+  .text-box span:nth-child(1){animation-delay:0s;}
+  .text-box span:nth-child(2){animation-delay:2s;}
+  .text-box span:nth-child(3){animation-delay:4s;}
+  .text-box span:nth-child(4){animation-delay:6s;}
 
   @keyframes fadeIn {
     to { opacity:1; }
   }
 
-  /* متن بالا (هم سایز متن وسط، صورتی و اوپاسیتی 80%) */
-  .top-text {
-    position: absolute;
-    top: 10%;
-    width: 100%;
-    text-align: center;
-    font-size: 1.3em;
-    color: rgba(255,182,193,0.8); /* صورتی با 80% opacity */
-    z-index: 1;
-    animation: topFade 2s forwards;
-  }
-  @keyframes topFade {
-    from { opacity: 0; transform: translateX(-50px);}
-    to { opacity: 1; transform: translateX(0);}
-  }
-
   /* قلب و ستاره‌ها */
   .emoji {
-    position: absolute;
-    font-size: 2rem;
-    opacity: 0.5;
+    position:absolute;
+    font-size:2rem;
+    opacity:0.5;
     animation: floatUp 8s infinite;
-    z-index: 1;
+    z-index:1;
   }
+
   @keyframes floatUp {
-    0% { transform: translateY(100vh) rotate(0deg);}
-    100% { transform: translateY(-50px) rotate(360deg);}
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-50px) rotate(360deg); }
   }
 
   /* موزیک */
   .music-box {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
+    position:absolute;
+    bottom:5%;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1;
   }
+
   .music-box audio {
-    width: 300px;
+    width:300px;
   }
 </style>
 </head>
+
 <body>
 
-<!-- عکس بک‌گراند روی گرادینت -->
 <div class="bg-image"></div>
 
-<!-- متن بالا -->
 <div class="top-text">a month has passed...</div>
 
-<!-- متن انیمیشن وسط -->
 <div class="text-box">
   <span>My dear Dina ♥️</span>
   <span>Spending a month by your side has filled my life with warmth, positive energy, understanding, and a renewed passion for living.</span>
@@ -114,7 +120,6 @@
   <span>«Happy one-month anniversary of our acquaintance.»</span>
 </div>
 
-<!-- قلب و ستاره‌ها -->
 <div class="emoji" style="left:10%; top:70%;">❤️</div>
 <div class="emoji" style="left:20%; top:60%;">💖</div>
 <div class="emoji" style="left:35%; top:80%;">⭐</div>
@@ -122,9 +127,7 @@
 <div class="emoji" style="left:65%; top:70%;">❤️</div>
 <div class="emoji" style="left:80%; top:60%;">⭐</div>
 <div class="emoji" style="left:90%; top:80%;">💖</div>
-<div class="emoji" style="left:45%; top:85%;">⭐</div>
 
-<!-- موزیک -->
 <div class="music-box">
   <audio controls>
     <source src="bg_audio_01.mp3" type="audio/mpeg">
